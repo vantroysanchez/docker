@@ -18,6 +18,7 @@ services:
       - ./data:/var/opt/mssql/data
       - ./log:/var/opt/mssql/log
       - ./secrets:/var/opt/mssql/secrets
+      - ./backups:/var/opt/mssql/backups
     networks:
       - mssql-network
 

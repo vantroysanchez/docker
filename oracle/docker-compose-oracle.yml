@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  oracledb:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracledb
+    environment:
+      ORACLE_PASSWORD: A123456*
+    volumes:
+      - ./data:/opt/oracle/oradata
+    networks:
+      - oracledb_network
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+
+volumes:
+  oracledb_data:
+
+networks:
+  oracledb_network:
+    driver: bridge
